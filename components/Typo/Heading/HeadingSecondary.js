@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 
-const HeadingPrimary = props => {
+const HeadingSecondary = props => {
 	return (
 		<View style={styles.container}>
 			<Text style={styles.heading}>
@@ -20,9 +20,9 @@ const styles = StyleSheet.create({
 		justifyContent: "flex-start"
 	},
 	heading: {
-		fontSize: 20,
+		fontSize: 18,
 		fontWeight: "600"
 	}
 })
 
-export default HeadingPrimary;
+export default HeadingSecondary;
