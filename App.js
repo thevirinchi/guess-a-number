@@ -4,10 +4,13 @@ import { StyleSheet, View } from 'react-native';
 
 import Header from "./components/Header/Header"
 
+import StartGameScreen from "./screens/StartGameScreen"
+
 export default function App() {
 	return (
 		<View style={styles.screen}>
 			<Header text="Guess a Number"/>
+			<StartGameScreen/>
 		</View>
 	);
 }
