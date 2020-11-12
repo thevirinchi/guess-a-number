@@ -18,6 +18,8 @@ const StartGameScreen = props => {
 	const setNumberHandler = () => {
 		if(isNaN(number) || number < 0 || number > 99)
 			Alert.alert("Invalid number!", "Please enter a value in the range 0-99 only.", [{text: "Okay", style: "destructive", onPress: setNumber()}])
+		else
+			props.onStart(number)
 	}
 
 	return (
