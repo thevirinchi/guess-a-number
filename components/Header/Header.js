@@ -32,8 +32,8 @@ const styles = StyleSheet.create({
 	},
 	header_title: {
 		fontSize: 18,
-		color: Colors.black,
-		fontWeight: "600"
+		color: Colors.white,
+		fontWeight: "700"
 	}
 })
 
