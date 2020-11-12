@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, StyleSheet, RecyclerViewBackedScrollView, Button, Alert } from 'react-native'
+import { View, StyleSheet, Button, Alert } from 'react-native'
 
 import Color from "../constants/Colors"
 
@@ -11,31 +11,38 @@ const GameScreen = props => {
 	const generateRandomNum = (min, max, exclude) => {
 		min = Math.ceil(min)
 		max = Math.floor(max)
-		const randomNumber = Math.floor(Math.random() * (max - min) + min)
-		if (randomNumber === props.userNumber)
-			setGameState(true)
-		return (randomNumber === exclude) ? generateRandomNum(min, max, exclude) : randomNumber
+		const randomNumber = Math.floor(Math.random() * (max-min) + min)
+		return (randomNumber === exclude)? generateRandomNum(min, max, exclude):randomNumber
 	}
 
+	const [guesses, setGuesses] = useState(0)
 	const [minGuess, setMinGuess] = useState(0)
 	const [maxGuess, setMaxGuess] = useState(100)
 	const [gameState, setGameState] = useState(false)
 	const [guess, setGuess] = useState(generateRandomNum(minGuess, maxGuess, props.userNumber))
 
-	useEffect(() => {
+	useEffect(()=>{
+		if(parseInt(guess) === parseInt(props.userNumber)){
+			setGameState(true)
+			props.onGameFinishHandler(props.userNumber, guesses)
+		}
+	}, [guess])
+
+	useEffect(()=>{
 		setGuess(generateRandomNum(minGuess, maxGuess, guess))
+		setGuesses((current)=>{return (current+1)})
 	}, [minGuess, maxGuess])
 
 	const lesserHandler = () => {
-		if (guess < props.userNumber)
-			Alert.alert("Don\'t Lie!", "You know that\'s wrong...", [{ text: "Sorry", style: "cancel" }])
+		if(guess<props.userNumber)
+			Alert.alert("Don\'t Lie!", "You know that\'s wrong...", [{text: "Sorry", style: "cancel"}])
 		else
 			setMaxGuess(guess)
 	}
 
 	const greatedHandler = () => {
-		if (guess > props.userNumber)
-			Alert.alert("Don\'t Lie!", "You know that\'s wrong...", [{ text: "Sorry", style: "cancel" }])
+		if(guess>props.userNumber)
+			Alert.alert("Don\'t Lie!", "You know that\'s wrong...", [{text: "Sorry", style: "cancel"}])
 		else
 			setMinGuess(guess)
 	}
