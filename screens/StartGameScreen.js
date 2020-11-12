@@ -15,8 +15,8 @@ const StartGameScreen = props => {
 				<Body text="Enter a number"/>
 				<TextInput placeholder="1-100" style={styles.numberInput}/>
 				<View style={styles.numberInput_buttonContainer}>
-					<View style={styles.numberInput_button}><Button title="Set"></Button></View>
-					<View style={styles.numberInput_button}><Button title="Cancel"></Button></View>
+					<View style={styles.numberInput_button}><Button title="Set" color={Colors.indicativeSuccess}></Button></View>
+					<View style={styles.numberInput_button}><Button title="Cancel" color={Colors.indicativeWarning}></Button></View>
 				</View>
 			</Card>
 		</View>
