@@ -6,6 +6,8 @@ import Header from "./components/Header/Header"
 
 import StartGameScreen from "./screens/StartGameScreen"
 
+import Colors from "./constants/Colors"
+
 export default function App() {
 	return (
 		<View style={styles.screen}>
@@ -18,6 +20,6 @@ export default function App() {
 const styles = StyleSheet.create({
 	screen: {
 		flex: 1,
-		backgroundColor: '#fff',
+		backgroundColor: Colors.white,
 	},
 });

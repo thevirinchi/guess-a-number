@@ -5,6 +5,8 @@ import HeadingPrimary from "../components/Typo/Heading/HeadingPrimary"
 import Body from "../components/Typo/Body/Body"
 import Card from "../components/Card/Card"
 
+import Colors from "../constants/Colors"
+
 const StartGameScreen = props => {
 	return (
 		<View style={styles.screen}>
@@ -31,7 +33,7 @@ const styles = StyleSheet.create({
 	numberInput: {
 		width: "80%",
 		marginVertical: 16,
-		borderColor: "#ffa270",
+		borderColor: Colors.primaryDark,
 		borderWidth: 1,
 		minHeight: 40,
 		textAlign: "center",
