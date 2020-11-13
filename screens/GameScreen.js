@@ -66,7 +66,6 @@ const styles = StyleSheet.create({
 	guessContainer: { flexDirection: "column", alignItems: "center", justifyContent: "center", marginVertical: 16 },
 	guessBorder: {marginTop: 16,flexDirection: "column", justifyContent:"center", alignItems:"center",borderColor: Color.secondary, borderWidth: 4, borderRadius: 8, padding: 16, shadowOpacity: 0.24,shadowRadius: 6,shadowOffset: {width: 0, height: 2},shadowColor: Color.black, elevation: 4, backgroundColor:Color.whiteLight},
 	buttonContainer: { display: "flex", flexDirection: "row", width: "100%", alignItems: "center", justifyContent: "space-evenly", marginVertical: 16 },
-
 })
 
 export default GameScreen;

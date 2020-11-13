@@ -4,6 +4,8 @@ import { View, StyleSheet, TextInput, Button, TouchableWithoutFeedback, Keyboard
 import HeadingPrimary from "../components/Typo/Heading/HeadingPrimary"
 import Body from "../components/Typo/Body/Body"
 import Card from "../components/Card/Card"
+import SuccessButton from "../components/Button/SuccessButton"
+import WarningButton from "../components/Button/WarningButton"
 
 import Colors from "../constants/Colors"
 
@@ -30,8 +32,8 @@ const StartGameScreen = props => {
 					<Body text="Enter a number" />
 					<TextInput placeholder="0-99" style={styles.numberInput} autoCorrect={false} keyboardType="number-pad" maxLength={2} onChangeText={numberChangeHandler} value={number} />
 					<View style={styles.numberInput_buttonContainer}>
-						<View style={styles.numberInput_button}><Button title="Set" color={Colors.indicativeSuccess} onPress={setNumberHandler}></Button></View>
-						<View style={styles.numberInput_button}><Button title="Cancel" color={Colors.indicativeWarning} onPress={() => { setNumber() }}></Button></View>
+						<View style={styles.numberInput_button}><SuccessButton text="Set" hollow={false} onPressHandler={setNumberHandler}></SuccessButton></View>
+						<View style={styles.numberInput_button}><WarningButton text="Cancel" hollow={false} onPressHandler={() => { setNumber() }}></WarningButton></View>
 					</View>
 				</Card>
 			</View>
