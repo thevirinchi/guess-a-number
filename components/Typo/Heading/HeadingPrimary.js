@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 	},
 	heading: {
 		fontSize: 20,
-		fontWeight: "600"
+		fontFamily: 'nunito-bold'
 	}
 })
 
