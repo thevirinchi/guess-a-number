@@ -17,7 +17,8 @@ const styles = StyleSheet.create({
 		alignItems: "center"
 	},
 	body: {
-		fontSize: 16
+		fontSize: 16,
+		fontFamily: 'nunito-regular'
 	}
 })
 
