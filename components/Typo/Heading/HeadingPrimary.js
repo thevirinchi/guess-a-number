@@ -21,7 +21,8 @@ const styles = StyleSheet.create({
 	},
 	heading: {
 		fontSize: 20,
-		fontFamily: 'nunito-bold'
+		fontFamily: 'nunito-bold',
+		textTransform: "capitalize"
 	}
 })
 
